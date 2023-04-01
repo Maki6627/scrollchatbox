@@ -1,134 +1,98 @@
-body {
-    background: $background_color;
-    color: $text_color;
-    font-size: $font_size;
-  }
-  
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+@import url('https://fonts.googleapis.com/css?family={{fontName}}:100,300,400,500,700,900');
+@font-face {
+font-family: 'Uni Sans Heavy CAPS';
+  src: url('https://cdn.jsdelivr.net/gh/mrboost/fonts/uni-sans.heavy-caps-webfont.woff') format('woff')
+}
+* {
+  font-family: '{{customFont}}';
+  color: {{fontColor}};
+  font-weight: {{fontWeight}};
+  text-shadow: {{textShadow}};
+}
 
-  .colon, .name {
-    height: 0px;
-  }
-  
+:root {
+  --bgColor: {bgColor};
+}
 
-  html, body {
-    height: 100%;
-    overflow: hidden;
-  }
-  body {
-    margin: 0;
-  }
-  
+.main-container{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 9999px;
+  height: calc({fontSize}px + 0px);
+  white-space: nowrap;
+  overflow: hidden;
+  padding-bottom: 15px;
+  padding-right: 8px;
+  background: var(--bgColor);
+}
 
-  #custom_html {
-    height: 100%;
-    vertical-align: bottom;
-  }
-  
+.message-row{
+  display: inline-block;
+  bottom: 0;
+  right: 0;
+  float: right;
+  padding: 4px 4px;
+}
 
-  .sl__chat__layout {
-    font: 1em "Helvetica Neue",Helvetica,Arial,sans-serif;
-    position: absolute;
-    bottom: 0;
-    padding-top: 0.1em;
-    box-sizing: border-box;
-  }
-  
-
-  /* text outline */
-  .text_outline {
-    text-shadow: 
-      -1px -1px 1px black, 
-      1px -1px 1px black, 
-      -1px 1px 1px black, 
-      1px 1px 1px black;
-  }
-  
-
-  .sl__chat__layout > div {
-    padding: 0.2em 0;
-    word-break: break-all;
-    animation: fadeOut 1s ease $message_hide_delay forwards;
-    -webkit-animation: fadeOut 1s ease $message_hide_delay forwards;
-  }
-  
-
-  /* makes messages go sideway */
-  .sl__chat__layout.horizontal_flow {
-    right: 0;
-    text-align: right;
-    width: 2500%;
-    height: 1.6em;
-    overflow: hidden;
-  }
-  .sl__chat__layout.horizontal_flow > div {
+.avatar {
     display: inline-block;
-    margin-left: 1.0em;
+    margin-right: 0em;
     position: relative;
-    /* left: 400px; */
-    /* animation: slide 0.2s forwards; */
-  
-
-    /* forces each message container to be not taller than 1em */
     height: 1em;
-    overflow: hidden;
-  }
-  
+    vertical-align: middle;
+    top: 0px;
+    border-radius: 3px;
+}
+.badge{
+  display: inline-block;
+  margin-right: 0em;
+  position: relative;
+  height: 1em;
+  vertical-align: middle;
+  top: 1px;
+}
 
-  .sl__chat__layout > div.deleted {
-    visibility: hidden;
-  }
-  
+.user-box{
+    display:inline;
+    font-size:{{fontSize}}px;
+}
 
-  .sl__chat__layout .emote {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    position: relative;
-    padding: 0 4px;
-    /*top: -.2em;*/
-  }
-  
+.hidden-box {
+  position: absolute;
+  widget: 0px;
+  opacity: 0;
+}
+.user-box > span{
+    font-size:{{fontSize}}px;
+}
 
-  .sl__chat__layout .emote img {
-    display: inline-block;
-    height: 0.8em;
-    opacity: 0;
-  }
-  
+.user-message{
+    display:inline;
+    font-size:{{fontSize}}px;
+    word-wrap: break-word;
+}
 
-  .badge,.colon,.name {
-    display: inline-block;
-    vertical-align: top;
-  }
-  
+.emote {
+  display: inline-block;
+  margin-right: 0.1em;
+  position: relative;
+  height: 1.1em;
+  vertical-align: middle;
+  top: 0em;
+}
 
-  .sl__chat__layout .meta {
-    /* the closing tag of `.meta` being in a new line creates a whitespace. */
-    /* unless it changes, padding-right won't be included. */
-    padding-right: 0px;
-    position: relative;
-  }
+.emote img {
+  display: inline-block;
+  position: relative;
+  height: 1.3em;
+  opacity: 0;
   
+}
 
-  .badge {
-    margin-right: 4px;
-    height: 1.2em;
-    position: relative;
-  }
-  
+.action{
+    font-style: italic;
+}
 
-  .name {
-    /* makes username thicker */
-    /* font-weight: 700; */
-  }
-  
-
-  /* cheermote */
-  .message > img[src*=".gif"] {
-    height: 1.2em;
-    padding-right: 4px;
-  }
-  .message > img[src*=".gif"] + font {
-    position: relative;
-    top: -0.25em;
-  }
+.highlight { background-color:{highlightColor}; }
