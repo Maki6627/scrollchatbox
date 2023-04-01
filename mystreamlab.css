@@ -1,162 +1,119 @@
 body {
-    background: $background_color;
-    color: $text_color;
-    font-size: $font_size;
-  }
-  
+  background: $background_color;
+  color: $text_color;
+  font-size: $font_size;
+  margin: 0;
+}
 
-  .colon, .name {
-    height: 0px;
-  }
-  
+.colon,
+.name {
+  height: 0px;
+}
 
-  html, body {
-    height: 100%;
-    overflow: hidden;
-  }
-  body {
-    margin: 0;
-  }
-  
+html,
+body {
+  height: 100%;
+}
 
-  #custom_html {
-    height: 100%;
-    vertical-align: bottom;
-  }
-  
+#custom_html {
+  height: 100%;
+  vertical-align: bottom;
+}
 
-  .sl__chat__layout {
-    font: 1em "Bubblegum",Helvetica,Arial,sans-serif;
-    position: absolute;
-    bottom: 0;
-    padding-top: 0.1em;
-    box-sizing: border-box;
-  }
-  
+.sl__chat__layout {
+  font: 1em "Bubblegum",Helvetica,Arial,sans-serif;
+  position: absolute;
+  bottom: 0;
+  padding-top: 0.1em;
+  box-sizing: border-box;
+}
 
-  /* text outline */
-  .text_outline {
-    text-shadow: 
-      -1px -1px 1px black, 
-      1px -1px 1px black, 
-      -1px 1px 1px black, 
-      1px 1px 1px black;
-  }
-  
+/* text outline */
+.text_outline {
+  text-shadow: 
+    -1px -1px 1px black, 
+    1px -1px 1px black, 
+    -1px 1px 1px black, 
+    1px 1px 1px black;
+}
 
-  .sl__chat__layout > div {
-    padding: 0.2em 0;
-    word-break: break-all;
-    animation: fadeOut 1s ease $message_hide_delay forwards;
-    -webkit-animation: fadeOut 1s ease $message_hide_delay forwards;
-  }
-  
+.sl__chat__layout > div {
+  padding: 0.2em 0;
+  word-break: break-all;
+  animation: fadeOut 1s ease $message_hide_delay forwards;
+  -webkit-animation: fadeOut 1s ease $message_hide_delay forwards;
+}
 
-  /* makes messages go sideway */
-  .sl__chat__layout.horizontal_flow > div {
-    display: inline-block;
-    margin-left: 1.0em;
-    position: relative;
-    height: 1em;
-    overflow: hidden;
-    white-space: nowrap; /* prevent text from wrapping */
-    animation: slide 20s linear infinite;
-    transition: transform 1s ease;
-    animation-delay: 3s; /* delay animation for 3 seconds */
-    animation-play-state: running; /* ensure animation is running */
-  }
-  
-  .sl__chat__layout.horizontal_flow > div {
-    display: inline-block;
-    margin-left: 1.0em;
-    position: relative;
-    /* left: 400px; */
-    /* animation: slide 0.2s forwards; */
-  
-
-    /* forces each message container to be not taller than 1em */
-    height: 1em;
-    overflow: hidden;
-  }
-  
-
-  .sl__chat__layout > div.deleted {
-    visibility: hidden;
-  }
-  
-
-  .sl__chat__layout .emote {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    position: relative;
-    padding: 0 4px;
-    /*top: -.2em;*/
-  }
-  
-
-  .sl__chat__layout .emote img {
-    display: inline-block;
-    height: 0.8em;
-    opacity: 0;
-  }
-  
-
-  .badge,.colon,.name {
-    display: inline-block;
-    vertical-align: top;
-  }
-  
-
-  .sl__chat__layout .meta {
-    /* the closing tag of `.meta` being in a new line creates a whitespace. */
-    /* unless it changes, padding-right won't be included. */
-    padding-right: 0px;
-    position: relative;
-  }
-  
-
-  .badge {
-    margin-right: 4px;
-    height: 1.2em;
-    position: relative;
-  }
-  
-
-  .name {
-    /* makes username thicker */
-    /* font-weight: 700; */
-  }
-  
-
-  /* cheermote */
-  .message > img[src*=".gif"] {
-    height: 1.2em;
-    padding-right: 4px;
-  }
-  .message > img[src*=".gif"] + font {
-    position: relative;
-    top: -0.25em;
-  }
-
-
-
-
+/* makes messages go sideway */
 .sl__chat__layout.horizontal_flow > div {
-display: inline-block;
-margin-left: 1.0em;
-position: relative;
-height: 1em;
-overflow: hidden;
-animation: slide 20s linear infinite;
-transition: transform 1s ease;
+  display: flex;
+  align-items: center;
+  margin-left: 1.0em;
+  position: relative;
+  height: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: slide 20s linear infinite;
+  animation-delay: 3s;
+  animation-play-state: running;
+}
+
+.sl__chat__layout > div.deleted {
+  visibility: hidden;
+}
+
+.sl__chat__layout .emote {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  padding: 0 4px;
+}
+
+.sl__chat__layout .emote img {
+  display: inline-block;
+  height: 0.8em;
+  opacity: 0;
+}
+
+.badge,
+.colon,
+.name {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.sl__chat__layout .meta {
+  padding-right: 0px;
+  position: relative;
+}
+
+.badge {
+  margin-right: 4px;
+  height: 1.2em;
+  position: relative;
+}
+
+.name {
+  font-weight: 700;
+}
+
+/* cheermote */
+.message > img[src*=".gif"] {
+  height: 1.2em;
+  padding-right: 4px;
+}
+
+.message > img[src*=".gif"] + font {
+  position: relative;
+  top: -0.25em;
 }
 
 @keyframes slide {
-0% {
-  transform: translateX(100%);
-}
-100% {
-  transform: translateX(-100%);
-}
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
