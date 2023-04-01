@@ -53,13 +53,19 @@ body {
   
 
   /* makes messages go sideway */
-  .sl__chat__layout.horizontal_flow {
-    right: 0;
-    text-align: right;
-    width: 2500%;
-    height: 1.6em;
+  .sl__chat__layout.horizontal_flow > div {
+    display: inline-block;
+    margin-left: 1.0em;
+    position: relative;
+    height: 1em;
     overflow: hidden;
+    white-space: nowrap; /* prevent text from wrapping */
+    animation: slide 20s linear infinite;
+    transition: transform 1s ease;
+    animation-delay: 3s; /* delay animation for 3 seconds */
+    animation-play-state: running; /* ensure animation is running */
   }
+  
   .sl__chat__layout.horizontal_flow > div {
     display: inline-block;
     margin-left: 1.0em;
