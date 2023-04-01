@@ -1,0 +1,156 @@
+body {
+    background: $background_color;
+    color: $text_color;
+    font-size: $font_size;
+  }
+  
+
+  .colon, .name {
+    height: 0px;
+  }
+  
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    margin: 0;
+  }
+  
+
+  #custom_html {
+    height: 100%;
+    vertical-align: bottom;
+  }
+  
+
+  .sl__chat__layout {
+    font: 1em "Bubblegum",Helvetica,Arial,sans-serif;
+    position: absolute;
+    bottom: 0;
+    padding-top: 0.1em;
+    box-sizing: border-box;
+  }
+  
+
+  /* text outline */
+  .text_outline {
+    text-shadow: 
+      -1px -1px 1px black, 
+      1px -1px 1px black, 
+      -1px 1px 1px black, 
+      1px 1px 1px black;
+  }
+  
+
+  .sl__chat__layout > div {
+    padding: 0.2em 0;
+    word-break: break-all;
+    animation: fadeOut 1s ease $message_hide_delay forwards;
+    -webkit-animation: fadeOut 1s ease $message_hide_delay forwards;
+  }
+  
+
+  /* makes messages go sideway */
+  .sl__chat__layout.horizontal_flow {
+    right: 0;
+    text-align: right;
+    width: 2500%;
+    height: 1.6em;
+    overflow: hidden;
+  }
+  .sl__chat__layout.horizontal_flow > div {
+    display: inline-block;
+    margin-left: 1.0em;
+    position: relative;
+    /* left: 400px; */
+    /* animation: slide 0.2s forwards; */
+  
+
+    /* forces each message container to be not taller than 1em */
+    height: 1em;
+    overflow: hidden;
+  }
+  
+
+  .sl__chat__layout > div.deleted {
+    visibility: hidden;
+  }
+  
+
+  .sl__chat__layout .emote {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    padding: 0 4px;
+    /*top: -.2em;*/
+  }
+  
+
+  .sl__chat__layout .emote img {
+    display: inline-block;
+    height: 0.8em;
+    opacity: 0;
+  }
+  
+
+  .badge,.colon,.name {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+
+  .sl__chat__layout .meta {
+    /* the closing tag of `.meta` being in a new line creates a whitespace. */
+    /* unless it changes, padding-right won't be included. */
+    padding-right: 0px;
+    position: relative;
+  }
+  
+
+  .badge {
+    margin-right: 4px;
+    height: 1.2em;
+    position: relative;
+  }
+  
+
+  .name {
+    /* makes username thicker */
+    /* font-weight: 700; */
+  }
+  
+
+  /* cheermote */
+  .message > img[src*=".gif"] {
+    height: 1.2em;
+    padding-right: 4px;
+  }
+  .message > img[src*=".gif"] + font {
+    position: relative;
+    top: -0.25em;
+  }
+
+
+
+
+.sl__chat__layout.horizontal_flow > div {
+display: inline-block;
+margin-left: 1.0em;
+position: relative;
+height: 1em;
+overflow: hidden;
+animation: slide 20s linear infinite;
+transition: transform 1s ease;
+}
+
+@keyframes slide {
+0% {
+  transform: translateX(100%);
+}
+100% {
+  transform: translateX(-100%);
+}
+}
