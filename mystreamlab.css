@@ -44,19 +44,26 @@ body {
   -webkit-animation: fadeOut 1s ease $message_hide_delay forwards;
 }
 
-/* makes messages go sideway */
-.sl__chat__layout.horizontal_flow > div {
+.sl__chat__layout.horizontal_flow {
   display: flex;
-  align-items: center;
-  margin-left: 1.0em;
-  position: relative;
-  height: 1em;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
   overflow: hidden;
-  white-space: nowrap;
-  animation: slide 20s linear infinite;
-  animation-delay: 3s;
-  animation-play-state: running;
 }
+
+.sl__chat__layout.horizontal_flow .message {
+  background: #ddd;
+  border-radius: 4px;
+  margin: 0.5em;
+  padding: 0.5em;
+  white-space: normal;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
 
 .sl__chat__layout > div.deleted {
   visibility: hidden;
