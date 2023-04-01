@@ -25,15 +25,15 @@ let logInstances = []
 	});
 	
 
-	function keepRecentMessages (messageList, amountToKeep = 10) {
-	  if (
-	    typeof messageList === 'undefined' ||
-	    typeof amountToKeep !== 'number'
-	  ) {
-	    return false
-	  }
-	  while (messageList.children.length > amountToKeep) {
-	    messageList.removeChild(messageList.firstElementChild)
-	  }
-	  return true
-	}
+	// function keepRecentMessages (messageList, amountToKeep = 10) {
+	//   if (
+	//     typeof messageList === 'undefined' ||
+	//     typeof amountToKeep !== 'number'
+	//   ) {
+	//     return false
+	//   }
+	//   while (messageList.children.length > amountToKeep) {
+	//     messageList.removeChild(messageList.firstElementChild)
+	//   }
+	//   return true
+	// }
